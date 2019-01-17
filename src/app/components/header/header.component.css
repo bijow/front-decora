@@ -1,4 +1,5 @@
 /* css and styles for header components */
-p {
-
+.top-bar{
+  background-color: #080f3c;
+  margin-bottom: 20px;
 }
