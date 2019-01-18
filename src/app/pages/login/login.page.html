@@ -2,21 +2,23 @@
 <header-component></header-component>
 
 <div class="container center login">
-    <mat-card class="card-login">
+
+  <mat-card class="card-login">
+      <div class="row center">
+          <mat-form-field>
+            <input [(ngModel)]="_user.login" id="login" matInput placeholder="Login">
+          </mat-form-field>
+        </div>
         <div class="row center">
-            <mat-form-field>
-              <input matInput placeholder="Login">
-            </mat-form-field>
-          </div>
-          <div class="row center">
-            <mat-form-field>
-              <input matInput placeholder="Senha" type="password">
-            </mat-form-field>
-          </div>
-          <div class="row center">
-            <button mat-flat-button color="primary">Acessar</button>
-          </div>
-      </mat-card>
+          <mat-form-field>
+            <input [(ngModel)]="_user.password" id="password" matInput placeholder="Senha" type="password">
+          </mat-form-field>
+        </div>
+        <div class="row center">
+          <button mat-flat-button color="primary" (click)="login()">Acessar</button>
+        </div>
+    </mat-card>
+
 </div>
 
-<footer-component class="footer"></footer-component>
+<footer-component></footer-component>

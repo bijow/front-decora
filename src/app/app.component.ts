@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './pages/login/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Decora - Application';
+
+  showMenu: boolean = false;
+
+  constructor(private _authService: AuthService){}
+
+  public ngOnint(){
+    this._authService.showMenuEmitter.subscribe(
+      show => this.showMenu = show
+    );
+  }
 }

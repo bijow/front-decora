@@ -7,6 +7,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ComponentModule } from './components/_component.module';
 import { RoutingModule, RoutingComponents } from './app.routing';
+import { AuthService } from './pages/login/auth.service';
+import { FormsModule } from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -26,9 +30,14 @@ import { RoutingModule, RoutingComponents } from './app.routing';
     MatRippleModule,
     MatSelectModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatToolbarModule,
+    FormsModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
