@@ -11,7 +11,8 @@ import { AuthService } from './pages/login/auth.service';
 import { FormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatGridListModule,
     MatToolbarModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule
+
   ],
   providers: [
     AuthService,
