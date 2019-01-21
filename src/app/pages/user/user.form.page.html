@@ -1,0 +1,39 @@
+<header-component></header-component>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center" style="color:#09123c;">Adicionar novo usuario</h1>
+      <p class="text-center"> Preencha abaixo todos os dados para adicionar um novo usuário para a aplicação</p>
+
+      <div class="form-container container">
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="_user.name" placeholder="Nome do usuário" id="name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" [(ngModel)]="_user.email"  [formControl]="emailFormControl"
+                   [errorStateMatcher]="matcher" id="email">
+            <mat-hint>Insira um email valido</mat-hint>
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Email invalido
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email é <strong>obrigatorio</strong>
+            </mat-error>
+          </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Login para acesso ao sistema" [(ngModel)]="_user.login"  id="login">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input id="password" matInput placeholder="Senha" type="password" [(ngModel)]="_user.password" >
+        </mat-form-field>
+
+        <div class="row center">
+          <button mat-flat-button color="primary" (click)="addNewUser()">Cadastrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

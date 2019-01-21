@@ -2,10 +2,12 @@ import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './pages/login/login.page';
 import { DashboardPage } from './pages/dashboard/dashboard.page';
+import { UserFormPage } from './pages/user/user.form.page';
 
 export const RoutingComponents = [
   LoginPage,
-  DashboardPage
+  DashboardPage,
+  UserFormPage
 ];
 
 const ROUTES: Routes = [
@@ -16,6 +18,10 @@ const ROUTES: Routes = [
   {
     path: 'dashboard',
     component: DashboardPage
+  },
+  {
+    path: 'user',
+    component: UserFormPage
   },
   {
     path: '**',

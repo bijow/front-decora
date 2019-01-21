@@ -8,12 +8,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { ComponentModule } from './components/_component.module';
 import { RoutingModule, RoutingComponents } from './app.routing';
 import { AuthService } from './pages/login/auth.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material';
-
+import { UserService } from './services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +34,15 @@ import { MatPaginatorModule } from '@angular/material';
     MatGridListModule,
     MatToolbarModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
 
   ],
   providers: [
     AuthService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

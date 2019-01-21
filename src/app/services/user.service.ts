@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { IUser } from '../interfaces/users/user.interface';
 
 @Injectable()
@@ -6,7 +8,7 @@ export class UserService {
 
   public users: IUser[];
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   public getUsers() {
     if(localStorage.getItem('users') === null ){
@@ -18,16 +20,17 @@ export class UserService {
   }
 
   public addUser(user: IUser) {
-    this.users.push(user);
     let users = [];
     if(localStorage.getItem('users') === null ){
       users = [];
       users.push(user);
       localStorage.setItem('users', JSON.stringify(users));
+      this._router.navigate(['/dashboard']);
      }else {
       users = JSON.parse(localStorage.getItem('users'));
       users.push(user);
       localStorage.setItem('users', JSON.stringify(users));
+      this._router.navigate(['/dashboard']);
      }
   }
 
